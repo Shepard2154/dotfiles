@@ -1,18 +1,228 @@
 {
+    "remote.SSH.remotePlatform": {
+        "114d685ff7ee.vps.myjino.ru": "linux"
+    },
+
+    // Main Editor
+    "window.newWindowDimensions": "maximized", // окно сразу на весь экран
+    "window.commandCenter": false, // скрыть центр команд сверху
+    "window.clickThroughInactive": false, // не кликать сквозь неактивное окно
+    "workbench.startupEditor": "newUntitledFile", // при запуске пустой файл
+    "workbench.tips.enabled": false, // отключить советы
+    "workbench.tree.enableStickyScroll": false, // отключить залипание в проводнике
+
     // Activity Bar
-    "workbench.activityBar.location": "hidden",
-    "workbench.sideBar.location": "right",
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.activityBar.location": "hidden", // скрыть панель с иконками слева
+    "workbench.sideBar.location": "right", // проводник справа
+    "workbench.secondarySideBar.defaultVisibility": "hidden", // скрыть вторую боковую панель
+    "workbench.tree.renderIndentGuides": "none", // убрать линии отступов в проводнике
 
     // Tabs
-    "workbench.editor.showTabs": "single",
-    "workbench.editor.showIcons": false,
-    "workbench.editor.labelFormat": "medium",
-    "breadcrumbs.enabled": false,
-    "workbench.statusBar.visible": false,
-    "editor.minimap.enabled": false,
-    "window.commandCenter": false,
-    "workbench.layoutControl.enabled": false,
-    "chat.disableAIFeatures": true,
-    "git.blame.statusBarItem.enabled": true
+    "workbench.editor.showTabs": "single", // вкладки только в текущей группе
+    "workbench.editor.showIcons": false, // убрать иконки с вкладок
+    "workbench.editor.labelFormat": "medium", // имя файла + расширение
+    "breadcrumbs.enabled": false, // отключить хлебные крошки
+    "workbench.statusBar.visible": false, // скрыть строку состояния
+    "workbench.layoutControl.enabled": false, // скрыть кнопку управления макетом
+    "chat.disableAIFeatures": true, // отключить AI-чат
+    "git.blame.statusBarItem.enabled": true, // Git Blame в статус-баре (но он скрыт)
+
+    // Per-language UI settings:
+    "[css]": {
+        "editor.colorDecorators": true, // цветные квадратики в CSS
+    },
+    "[jsonc]": {
+        "editor.colorDecorators": true, // цветные квадратики в JSON с комментариями
+    },
+
+    // Files
+    "files.exclude": {
+        "**/.DS_Store": true, // скрыть мусор macOS
+
+        "**/node_modules": true,
+        
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/.idea": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/.venv": true,
+        "**/.coverage": true,
+        "**/*.py[co]": true,
+        "**/htmlcoverage": true,
+    },
+    "files.autoSave": "onFocusChange", // автосохранение при переключении
+      "files.associations": {
+        ".babelrc": "jsonc", // .babelrc как JSON с комментариями
+        ".eslintrc": "jsonc", // .eslintrc как JSON с комментариями
+        "*.pyi": "python",
+        "*.bats": "shellscript",
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook",
+    },
+   
+    // Terminal
+    "terminal.integrated.defaultLocation": "editor", // терминал во вкладке редактора
+    "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.integrated.suggest.enabled": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.fontLigatures.enabled": false,
+    "terminal.integrated.sendKeybindingsToShell": true,
+
+    // Theme
+    "workbench.colorTheme": "pustota",
+    "editor.semanticHighlighting.enabled": false, // отключить семантическую подсветку
+    "editor.unicodeHighlight.nonBasicASCII": false, // не подсвечивать русские символы
+
+    // Debug
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.javascript.codelens.npmScripts": "never",
+    "editor.glyphMargin": false,
+    "debug.console.closeOnEnd": true,
+
+    // Navigation
+    "editor.gotoLocation.multipleReferences": "goto", // сразу к первому варианту
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    // Editor
+    "editor.cursorBlinking": "solid", // курсор не мигает
+    "editor.cursorSurroundingLines": 3, // 3 строки над и под курсором
+    "editor.useTabStops": true, // табуляция перескакивает
+    "editor.fontFamily": "Fira Code", // шрифт Fira Code
+    "editor.fontSize": 17, // размер шрифта 17
+    "editor.codeLens": true, // показывать CodeLens
+    "editor.occurrencesHighlight": "off", // не подсвечивать вхождения символа
+    "editor.folding": false, // отключить сворачивание
+    "explorer.openEditors.visible": 1, // показывать 1 открытый файл
+    "explorer.compactFolders": false, // не сжимать папки
+    "explorer.confirmDelete": false, // не спрашивать при удалении
+    "explorer.confirmDragAndDrop": false, // не спрашивать при перетаскивании
+    "explorer.decorations.badges": false, // убрать бейджи с папок
+    "editor.rulers": [79], // линейка на 79 символов
+    "editor.wordWrapColumn": 80, // перенос на 80
+    "editor.wordWrap": "on", // включить перенос строк
+    "editor.renderWhitespace": "selection", // показывать пробелы только в выделенном
+    "editor.renderLineHighlight": "none", // не подсвечивать текущую строку
+    "editor.minimap.enabled": false, // отключить мини-карту
+    "editor.overviewRulerBorder": false, // убрать рамку у полосы прокрутки
+    "editor.hideCursorInOverviewRuler": false, // показывать курсор на полосе прокрутки
+    "editor.scrollbar.vertical": "auto", // вертикальная прокрутка при необходимости
+    "editor.scrollbar.horizontal": "hidden", // скрыть горизонтальную прокрутку
+    "editor.scrollBeyondLastLine": false, // не прокручивать за последнюю строку
+    "editor.formatOnPaste": false, // не форматировать при вставке
+    "editor.snippetSuggestions": "none", // не показывать сниппеты
+    "editor.dragAndDrop": false, // отключить перетаскивание мышью
+    "editor.bracketPairColorization.enabled": false, // отключить цветные скобки
+    "editor.hover.enabled": "off", // отключить всплывающие подсказки
+    "diffEditor.renderSideBySide": false, // сравнение в один столбец
+    "editor.stickyScroll.enabled": false, // отключить залипание
+
+    // Do not modify my code, please:
+    "editor.autoClosingBrackets": "never", // не добавлять закрывающую скобку
+    "editor.autoClosingQuotes": "never", // не добавлять парную кавычку
+    "editor.autoSurround": "never", // не оборачивать выделенное
+    "editor.autoClosingOvertype": "never", // не перешагивать через скобку
+    "editor.suggestOnTriggerCharacters": false, // не показывать подсказки при вводе
+    "editor.acceptSuggestionOnCommitCharacter": false, // не принимать подсказку при вводе ; или (
+    "editor.parameterHints.enabled": false, // отключить подсказки параметров
+      "editor.quickSuggestions": {
+        "other": false, // отключить подсказки везде
+        "comments": false, // отключить подсказки в комментариях
+        "strings": false, // отключить подсказки в строках
+    },
+    "editor.suggestSelection": "recentlyUsed", // показывать недавно использованные
+    "editor.suggest.localityBonus": true, // поднимать ближайшие символы
+    "editor.formatOnType": false, // не форматировать при печати
+    "editor.inlineSuggest.enabled": false, // отключить серые подсказки Copilot
+    "editor.lightbulb.enabled": "off", // убрать лампочку
+    "editor.guides.indentation": false, // убрать линии отступов
+    "editor.detectIndentation": false, // не определять отступы автоматически
+    "editor.pasteAs.preferences": ["text.plain"], // вставлять как простой текст
+    "chat.agent.enabled": false, // отключить AI-агента
+
+    // Search
+    "search.quickAccess.preserveInput": true, // сохранять текст в быстром поиске
+    "search.quickOpen.includeSymbols": false, // искать только файлы
+    "search.quickOpen.history.filterSortOrder": "recency", // сортировать по недавности
+    "workbench.quickOpen.preserveInput": false, // очищать командную палитру после выполнения
+    
+    // Tools
+    "problems.decorations.enabled": false, // скрыть все подчёркивания ошибок
+
+    // Python
+    "python.analysis.completeFunctionParens": false, // не добавлять () при дополнении
+    "python.createEnvironment.trigger": "off", // не предлагать создать окружение
+    "python.languageServer": "Pylance", // языковой сервер Pylance
+    "python.analysis.reportExtraTelemetry": false, // отключить телеметрию
+    "python.analysis.addHoverSummaries": false, // отключить всплывающие подсказки
+    "python.analysis.ignore": ["**/*.py"], // игнорировать все Python-файлы
+    "python.analysis.typeCheckingMode": "off", // отключить проверку типов
+    "python.analysis.autoImportCompletions": false, // не предлагать импорты
+    "python.analysis.autoSearchPaths": false, // не искать пути автоматически
+    "python.experiments.enabled": false, // отключить эксперименты
+    "python.testing.autoTestDiscoverOnSaveEnabled": false, // не искать тесты при сохранении
+
+    // JavaScript
+    "js/ts.updateImportsOnFileMove.enabled": "never", // не обновлять импорты
+    "js/ts.suggest.autoImports": false, // не предлагать импорты
+
+    // Git
+    "merge-conflict.autoNavigateNextConflict.enabled": false, // не переходить к следующему конфликту
+    "git.autofetch": false, // не делать fetch в фоне
+    "git.showInlineOpenFileAction": false, // убрать кнопку Open File
+    "git.autorefresh": true, // обновлять Git-статус автоматически
+    "git.decorations.enabled": true, // показывать иконки M, U, D
+    "git.openRepositoryInParentFolders": "never", // не искать репозиторий в родительских папках
+    "git.blame.editorDecoration.enabled": false, // не показывать Blame в редакторе
+
+    // Extensions
+    "extensions.ignoreRecommendations": true, // не предлагать расширения
+    "workbench.colorCustomizations": {
+        // I customize these two, because other people might
+        // want to have error and warning decorations even in `pustota` theme.
+        "editorError.foreground": "#00000000", // сделать ошибки прозрачными (невидимыми)
+        "editorWarning.foreground": "#00000000", // сделать предупреждения прозрачными
+    },
+
+    // https://github.com/subframe7536/vscode-custom-ui-style extension:
+    "custom-ui-style.electron": {
+        "frame": false,  // убрать рамку окна
+        "transparent": true,   // убрать белую линию сверху
+        "titleBarStyle": "hidden", // скрыть заголовок окна
+        "titleBarOverlay": {
+        "height": 35,  // высота области заголовка для центрирования
+        }
+    },
+    "window.titleBarStyle": "native", // использовать нативный заголовок (расширение скроет)
+    "window.customTitleBarVisibility": "never", // не показывать кастомный заголовок VS Code
+    "custom-ui-style.stylesheet": {
+        // Hide extra items:
+        ".monaco-toolbar, .quick-input-list .scrollbar, .quick-input-list .action-label": {
+        "visibility": "hidden !important",
+        "display": "none !important", // скрыть панели, полосы прокрутки и кнопки
+        },
+        // Center the title with the filename:
+        ".monaco-workbench .editor-group-container>.title>.label-container>.title-label>.monaco-icon-label-container": {
+        "margin-left": "50px !important", // отцентрировать название файла
+        },
+        // Offset terminal title:
+        ".composite.title.has-composite-bar": {
+        "margin-left": "50px !important", // отцентрировать заголовок терминала
+        },
+        // Remove "Merge in merge editor" button
+        ".floating-click-widget": {
+        "visibility": "hidden !important",
+        "display": "none !important", // скрыть кнопку Merge in merge editor
+        },
+    },
+
+    // Telemetry
+    "telemetry.telemetryLevel": "off", // полностью отключить телеметрию
+    "sync.enabled": false,
 }
