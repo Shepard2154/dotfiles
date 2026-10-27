@@ -1,8 +1,4 @@
 {
-    "remote.SSH.remotePlatform": {
-        "114d685ff7ee.vps.myjino.ru": "linux"
-    },
-
     // Main Editor
     "window.newWindowDimensions": "maximized", // окно сразу на весь экран
     "window.commandCenter": false, // скрыть центр команд сверху
